@@ -4,8 +4,11 @@ Created on Fri Mar  4 12:52:17 2022
 
 @author: jfrey
 """
-
+# tutorial:
 # https://www.youtube.com/watch?v=zmdjNSmRXF4&list=PL-osiE80TeTsWmV9i9c58mdDCSskIFdDS&index=2
+
+# data:
+# https://insights.stackoverflow.com/survey
 
 import pandas as pd
 import os
@@ -19,7 +22,7 @@ schema_df = pd.read_csv('pyds/stack-overflow-developer-survey-2020/survey_result
 schema_df
 
 ######################
-
+######################
 person = {
     "first": "Corey",
     "last": "Schafer",
@@ -65,8 +68,36 @@ people_df.loc[[0,1], "email"] # loc = location for ROW. Can take strings.
                               # since rownames are just integers, 
                               # it will take integers for rows too
 people_df.loc[[0,1], ["last", "email"]]
-
-
-
-
 ######################
+######################
+
+df.head()
+df.shape # ~64,000 rows, 61 columns
+df.columns
+
+# Who programs as a hobby? Multiple ways to get this data
+df['Hobbyist'].value_counts() # for counting categorical data
+                                # ~50,000 said yes
+
+df.loc[0, 'Hobbyist'] # first row, hobbyist column
+df.loc[range(0,3), 'Hobbyist'] # first 3 rows, hobbyist column
+df.loc[0:2, 'Hobbyist'] # first 3 rows, hobbyist column
+df.loc[0:2, 'Hobbyist':'Employment'] # first 3 rows, hobbyist column through employment
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
