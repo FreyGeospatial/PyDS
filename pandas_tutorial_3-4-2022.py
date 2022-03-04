@@ -108,6 +108,39 @@ people_df
 ###############################
 # can also just set index within read_csv function
 df = pd.read_csv('pyds/stack-overflow-developer-survey-2020/survey_results_public.csv', index_col = "Respondent")
+df.head()
+
+schema_df.set_index("Column", inplace = True)
+schema_df.sort_index(inplace=True)
+
+################################################################
+# PART 4: FILTERING ############################################
+################################################################
+################################################################
+
+# filter all rows that contain "doe" as last name
+people_df['last'] == "Doe" # same as in R: people_df$last == "Doe"
+type(people_df['last'] == "Doe")
+people_df[(people_df['last'] == "Doe")] # parenthesis not necessary, but does help
+                                        # readability...
+# just email column                       
+people_df.loc[(people_df['last'] == "Doe"), 'email']
+
+
+people_df.loc[(people_df['last'] == "Doe") & (people_df['first'] == "John")] # AND
+people_df.loc[(people_df['last'] == "Schafer") | (people_df['first'] == "John")] # OR
+
+# NEGATE FILTER: '~' instead of '!'
+people_df.loc[~((people_df['last'] == "Schafer") | (people_df['first'] == "John"))] # OR
+
+# same as R's %in% operator
+df['Country'].isin(['United Stares', 'India', 'United Kingdom', 'Germany', 'Canada'])
+
+
+# find high salaries in select countries
+schema_df.loc['ConvertedComp', 'QuestionText'] # describe convertedcomp column
+df.loc[(df['ConvertedComp'] > 70000) & (df['Country'].isin(['United Stares', 'India', 'United Kingdom', 'Germany', 'Canada'])& (df['LanguageWorkedWith'].str.contains('Python', na=False))), ['Country', 'LanguageWorkedWith', 'ConvertedComp']] # do not include NaN's
+
 
 
 
