@@ -84,9 +84,30 @@ df.loc[range(0,3), 'Hobbyist'] # first 3 rows, hobbyist column
 df.loc[0:2, 'Hobbyist'] # first 3 rows, hobbyist column
 df.loc[0:2, 'Hobbyist':'Employment'] # first 3 rows, hobbyist column through employment
 
+################################# ^^^ finishes parts 1-2
+################################################################
+# PART 3: INDEXES ##############################################
+################################################################
+################################################################
 
+# what is a pandas index?
+people_df # index would be the row numbers (0,1,2) and are usually unique.
 
+# can also manually set index:
+people_df.set_index('email', inplace = True) # email now replaces rownumbers
+                                            # inplace = True makes this change
+                                            # actually occur, not just temporarily
+people_df.index
+people_df
+people_df['email'] # no longer exists as it is now index
+people_df.loc['CoreyMSchafer@gmail.com', 'last']
 
+# to reset index...
+people_df.reset_index(inplace=True)
+people_df
+###############################
+# can also just set index within read_csv function
+df = pd.read_csv('pyds/stack-overflow-developer-survey-2020/survey_results_public.csv', index_col = "Respondent")
 
 
 
