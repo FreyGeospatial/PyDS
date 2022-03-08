@@ -62,7 +62,7 @@ type(people_df[['last', 'email']].iloc[0]) # returns a series
 type(people_df[['last', 'email']].iloc[[0,1]]) # returns a dataframe
 
 # can also subset df another way:
-    people_df.iloc[[0,1], 2] # 2 is the column integer location
+people_df.iloc[[0,1], 2] # 2 is the column integer location
 
 people_df.loc[[0,1], "email"] # loc = location for ROW. Can take strings.
                               # since rownames are just integers, 
@@ -123,6 +123,9 @@ people_df['last'] == "Doe" # same as in R: people_df$last == "Doe"
 type(people_df['last'] == "Doe")
 people_df[(people_df['last'] == "Doe")] # parenthesis not necessary, but does help
                                         # readability...
+                                        
+# reset index
+people_df.reset_index(inplace=True)
 # just email column                       
 people_df.loc[(people_df['last'] == "Doe"), 'email']
 
@@ -140,6 +143,7 @@ df['Country'].isin(['United Stares', 'India', 'United Kingdom', 'Germany', 'Cana
 # find high salaries in select countries
 schema_df.loc['ConvertedComp', 'QuestionText'] # describe convertedcomp column
 df.loc[(df['ConvertedComp'] > 70000) & (df['Country'].isin(['United Stares', 'India', 'United Kingdom', 'Germany', 'Canada'])& (df['LanguageWorkedWith'].str.contains('Python', na=False))), ['Country', 'LanguageWorkedWith', 'ConvertedComp']] # do not include NaN's
+
 
 
 
