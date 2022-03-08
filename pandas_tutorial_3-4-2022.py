@@ -144,13 +144,15 @@ df['Country'].isin(['United Stares', 'India', 'United Kingdom', 'Germany', 'Cana
 schema_df.loc['ConvertedComp', 'QuestionText'] # describe convertedcomp column
 df.loc[(df['ConvertedComp'] > 70000) & (df['Country'].isin(['United Stares', 'India', 'United Kingdom', 'Germany', 'Canada'])& (df['LanguageWorkedWith'].str.contains('Python', na=False))), ['Country', 'LanguageWorkedWith', 'ConvertedComp']] # do not include NaN's
 
-
-
-
-
-
-
-
+###################################################
+# vectorized concatenation
+people_df['first'] + ' ' + people_df['last']
+# create new column, 'full_name'
+people_df['full_name'] = people_df['first'] + ' ' + people_df['last']
+people_df['full_name']
+# drop columns
+people_df.drop(columns=['first', 'last'], inplace=True)
+people_df['full_name'].str.split(' ')
 
 
 
