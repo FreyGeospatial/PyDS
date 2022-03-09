@@ -14,6 +14,7 @@ import pandas as pd
 import os
 os.getcwd()
 
+
 df = pd.read_csv('pyds/stack-overflow-developer-survey-2020/survey_results_public.csv')
 df.head()
 
@@ -99,7 +100,7 @@ people_df.set_index('email', inplace = True) # email now replaces rownumbers
                                             # actually occur, not just temporarily
 people_df.index
 people_df
-people_df['email'] # no longer exists as it is now index
+# people_df['email'] # no longer exists as it is now index
 people_df.loc['CoreyMSchafer@gmail.com', 'last']
 
 # to reset index...
@@ -152,10 +153,22 @@ people_df['full_name'] = people_df['first'] + ' ' + people_df['last']
 people_df['full_name']
 # drop columns
 people_df.drop(columns=['first', 'last'], inplace=True)
-people_df['full_name'].str.split(' ')
+people_df['full_name'].str.split(' ', expand=True) # expand argument expands list into two columns
 
+people_df[['first', 'last']] = people_df['full_name'].str.split(' ', expand=True)
+people_df
 
+# appending rows. append method does not have an inplace parameter to pass an argument to
+people_df = people_df.append(pd.DataFrame({'first': ['Tony', 'Steve'],
+                  'last': ['Stark', 'Rogers'],
+                  'email': ['IronMan@avenge.com', 'Cap@avenge.com']}), 
+                 ignore_index=True)
+people_df
 
+# if we want to drop steve rogers
+people_df.drop(index=4)
+# drop row using conditional
+people_df.drop(index=people_df[people_df['last']=='Doe'].index)
 
 
 
