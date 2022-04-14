@@ -1,0 +1,23 @@
+(base) jfrey@Jordans-MacBook-Pro pyds % cd virtual_environments
+(base) jfrey@Jordans-MacBook-Pro virtual_environments % ls
+notes.txt
+(base) jfrey@Jordans-MacBook-Pro virtual_environments % python --version
+Python 3.9.7
+(base) jfrey@Jordans-MacBook-Pro virtual_environments % python -m venv 'my_venv'
+(base) jfrey@Jordans-MacBook-Pro virtual_environments % 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
