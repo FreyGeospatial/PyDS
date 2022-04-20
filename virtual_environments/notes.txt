@@ -2,3 +2,8 @@ python -m venv /path/to/new/virtual/environment
 
 
 python -m venv '.venv'
+
+
+# to activate within powershell, assuming you are already cd'd into the folder containing this text file:    $ .\'.venv'\Scripts\activate.ps1
+
+# on MacOS:    $ source .\'.venv'\bin\activate
