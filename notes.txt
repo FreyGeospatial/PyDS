@@ -1,0 +1,10 @@
+# important packages and functionality to learn and stay ontop of:
+concurrent.futures - launching parallel tasks (https://docs.python.org/3.8/library/concurrent.futures.html#concurrent.futures.Future)
+---- concurrent.futures.ProcessPoolExecutor
+logging package
+--- debug, info, warning, error, critical, exception
+type hinting
+unit and integration testing (pytest and unittest packages specifically)
+pyodbc
+Faker (https://pypi.org/project/Faker/)
+async
