@@ -6,5 +6,11 @@ logging package
 type hinting
 unit and integration testing (pytest and unittest packages specifically)
 pyodbc
+pytz
+datetime
+json
+random
 Faker (https://pypi.org/project/Faker/)
 async
+boto3
+cloudevents (https://github.com/cloudevents/sdk-python)
