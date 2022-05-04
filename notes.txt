@@ -8,6 +8,8 @@ unit and integration testing
 ------(pytest and unittest packages specifically)
 -------and having VSCode debugger run while patching)
 -------parametrizing patches
+-------?patching functions that contain multiple arguments?
+-------https://breadcrumbscollector.tech/how-to-mock-in-python-almost-definitive-guide/
 pyodbc
 pytz
 datetime
