@@ -49,3 +49,31 @@ cities['_found'] = find_city # add function as key-value pair in dict
 
 cities["_found"](cities, "New York") # calls function and passes arguments to it
 
+################
+
+# can also create dictionaries this way:
+
+another_dict = dict(q="sausages", format="json")
+print(another_dict)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
