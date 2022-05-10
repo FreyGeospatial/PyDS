@@ -21,3 +21,31 @@ warnings.filterwarnings('ignore')
 1 / mydata2
 
 np.matrix.round(1/mydata2, 1) #round to 1 decimal place
+
+
+##########################
+
+# update: May 10, 2022:
+    
+cities = {"San Diego": "CA",
+          "New York": "NY",
+          "Detroit": "MI"}
+
+print(cities)
+
+# returns state abbr
+def find_city(map, city): # map is a builtins function... help(map)
+    # does something, returns some value
+    if city in map:
+        return map[city]
+    else:
+        return "Not Found"
+    
+find_city(cities, "New York")
+
+# BUT! We can add this to dict:
+
+cities['_found'] = find_city # add function as key-value pair in dict
+
+cities["_found"](cities, "New York") # calls function and passes arguments to it
+
