@@ -1,0 +1,49 @@
+stackoverflow.com/questions/2051192/what-is-a-python-egg
+
+A python egg (.egg extension) is a logical structure embodying the release of a specific version of a python project. An egg comprises its code, resources, and metadata. There are multiple formats that can be used to physically encode a python egg.
+
+A python egg should be DISCOVERABLE and IMPORTABLE. A python application should be able to easily and efficiently find out what eggs are present ona system and ensure its contents are importable.
+
+Eggs should also be easily distributed, and also easily uninstalled.
+
+They are an alternative to .exe, and are cross platform.
+
+
+Example:
+#############################
+
+
+# setup.py
+from setuptools import setup, find_packages
+setup(
+    name = "mymath",
+    version = "0.1",
+    packages = find_packages()
+    )
+
+#########################
+To create a .egg for a directory, do:
+
+ $ python setup.py develop
+
+ ######################################
+
+
+this will generate a lot of outputs, but it will have three new folders:
+1) build
+2) dist
+3) mymath.egg-info
+
+The dist folder will contain the .egg file (mymath-0.1-py3.5.egg). py3.5 signifies local python version, so mine might be >=3.9.5
+
+HOWEVER... I have done some searching, and some people note that eggs are becoming/have become obsolete due to introduction of wheels. Unknown how true this is, but should keep in mind for future.
+
+
+
+
+
+
+
+
+
+
