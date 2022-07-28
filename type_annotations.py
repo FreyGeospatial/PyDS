@@ -33,3 +33,8 @@ def add(x: Union[int, float], y: Union[int, float]) -> Union[int, float]: # take
     return x + y
 
 new_val: Union[int, float] = add(4.5, 5.5)
+
+
+# casting
+from typing import cast
+
