@@ -59,9 +59,27 @@ print(another_dict)
 
 
 
+#####################
+# default dict from collections package
+
+from collections import defaultdict
+# subclass of Dict class.  Almost the 
+# same as dict, but defaultdict never raises a KeyError if
+# provided with default val
 
 
-
+def def_value():
+    return "Not Present"
+      
+# Defining the dict
+d = defaultdict(def_value)
+d["a"] = 1
+d["b"] = 2
+  
+print(d["a"])
+print(d["b"])
+print(d["c"])
+print(d["e"])
 
 
 
