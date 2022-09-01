@@ -1,5 +1,7 @@
 import os
-os.chdir("with")
+from contextlib import contextmanager
+
+# os.chdir("with")
 
 # one way to work with files
 f = open('sample.txt', 'w')
@@ -30,5 +32,18 @@ class Open_File():
 
 with Open_File('sample.txt', 'w') as f:
     f.write('Testing')
+
+print(f.closed)
+
+# same as above. uses contextlib library
+@contextmanager
+def open_file(file, mode):
+    f = open(file, mode)
+    yield f
+    f.close()
+
+
+with open_file('sample.txt', 'w') as f:
+    f.write("Lorem ipsum dolor sit amet consectetur adipiscing elit.")
 
 print(f.closed)
