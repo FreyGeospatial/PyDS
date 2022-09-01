@@ -38,9 +38,11 @@ print(f.closed)
 # same as above. uses contextlib library
 @contextmanager
 def open_file(file, mode):
-    f = open(file, mode)
-    yield f
-    f.close()
+    try:
+        f = open(file, mode)
+        yield f
+    finally:
+        f.close()
 
 
 with open_file('sample.txt', 'w') as f:
