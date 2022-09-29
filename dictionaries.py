@@ -84,8 +84,36 @@ print(d["e"])
 
 
 
+# dictionary comprehension
+# (like a list comprehension, but for dicts)
+import uuid
+from typing import Optional
 
+class Event():
+    def __init__(self):
+        self.Info: Info = Info()
+        self.OtherData: OtherData = OtherData()
 
+class Info():
+    def __init__(self):
+        self.Id: Optional[str] = str(uuid.uuid4())
+
+class OtherData():
+    def __init__(self):
+        self.Name: Optional[str] = None
+
+event1 = Event()
+event2 = Event()
+
+events = [event1, event2]
+
+# dictionary comprehension
+ids = {x.Info.Id: x for x in events} # uuid's are the dictionary keys
+                                    # values are the event objects
+
+type(ids)
+ids.keys()
+ids.values()
 
 
 
